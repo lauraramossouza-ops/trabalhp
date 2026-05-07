@@ -1,7 +1,11 @@
-@media screen and (min-width: 768px) {
-  /* Código omitido */
+const botoes = document.querySelectorAll(".botao");
 
-  .botao:last-child {
-    border-radius: 0 40px 0 0;
-  }
+for (let i = 0; i < botoes.length; i++) {
+  botoes[i].onclick = function () {
+    for (let j = 0; j < botoes.length; j++) {
+      botoes[j].classList.remove("ativo");
+    }
+
+    botoes[i].classList.add("ativo");
+  };
 }
